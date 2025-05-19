@@ -1,0 +1,24 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <label>
+    Employee Name:
+    <input type="text" formControlName="name" />
+  </label>
+  <div *ngIf="employeeForm.get('name')?.touched && employeeForm.get('name')?.invalid">
+    Enter Valid name.
+  </div>
+
+  <label>
+    Age:
+    <input type="text" formControlName="age" />
+  </label>
+  <div *ngIf="employeeForm.get('age')?.touched && employeeForm.get('age')?.invalid" >
+    Enter Valid age
+  </div>
+
+  <div *ngFor = "let x of values">
+    {{x}}
+  </div>
+  <button (click)="getData()">get</button>
+
+  <!-- <button type="Submit">Submit</button> -->
+</form>
